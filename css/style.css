@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    height: 100svh;
+    background-color: black;
+}
+
+.game {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    position: relative;
+}
+
+.display .title-ini {
+    margin-bottom: 20%;
+    text-align: center;
+    background-color: lightseagreen;
+    color: white;
+    padding: 10px;
+}
+
+.display .image-ini {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 10%;
+}
+
+.display .select-difficulty, .btn-start {
+    all: unset;
+    width: 90%;
+    margin:0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: x-large;
+    /* border: solid 1px green; */
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: lightseagreen;
+    color: white;
+    margin-bottom: 0;
+}
+
+.tabuleiro {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    padding-top: 200px;
+}
+
+.card {
+    user-select: none;
+    width: 100px;
+    height: 100px;
+    font-size: xx-large;
+    box-shadow: 0 0 5px lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.card-click {
+    background-color: lightblue;
+    animation-name: virarcarta;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+}
+
+.vida {
+    top: 10px;
+    width: 90%;
+    height: 20px;
+    border: solid 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.vida-barra {
+    height: 100%;
+    background-color: green;
+    position: absolute;
+    width: 100%;
+}
+
+.points {
+    top: 5%;
+    left: 50%;
+    position: absolute;
+    font-size: xx-large;
+    z-index: 99;
+}
+
+.end-game {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+.end-game-title {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.end-game-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.end-game-btnrestart {
+    all: unset;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 30px;
+    font-size: xx-large;
+    text-align: center;
+    background-color: lightseagreen;
+    animation-name: button_animate;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes virarcarta {
+    to { transform: rotateY(360deg);}
+}
+
+@keyframes button_animate {
+    to { scale: 1; }
+    from { scale: 1.1; }
+}
